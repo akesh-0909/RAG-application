@@ -15,6 +15,8 @@ class RetrieverHolder:
 
 retriever_holder = RetrieverHolder()
 global retriver_holder
+
+
 class CreateVectorStore(Resource):
     def post(self):
         """

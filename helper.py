@@ -1,6 +1,6 @@
 from langchain_community.document_loaders import WebBaseLoader,PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.embeddings import SentenceTransformerEmbeddings,HuggingFaceEmbeddings
+from langchain_community.embeddings import HuggingFaceEmbeddings,HuggingFaceInferenceAPIEmbeddings
 from chromadb.utils import embedding_functions
 from langchain_chroma import Chroma
 import bs4
@@ -9,12 +9,17 @@ import shutil
 import requests
 from dotenv import load_dotenv
 import streamlit as st
+from chromadb.utils import embedding_functions
 # import json
 load_dotenv()
 Gemini_API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key={os.environ['GEMINI']}"
-embedding = HuggingFaceEmbeddings(model_name=r"D:\GenAI\RAG\Rag applicaiton-from medium tutoral\sentence-transformers\all-MiniLM-L6-v2")
-
-
+# embedding = embedding_functions.SentenceTransformerEmbeddingFunction(model_name="all-MiniLM-L6-v2")
+# embedding = HuggingFaceEmbeddings(model_name=r"D:\GenAI\RAG\Rag applicaiton-from medium tutoral\sentence-transformers\all-MiniLM-L6-v2")
+# model_name="sentence-transformers\all-MiniLM-L6-v2"
+# embedding = HuggingFaceInferenceAPIEmbeddings(model_name=model_name,api_key=os.environ['HF_TOKEN'])
+embedding = HuggingFaceInferenceAPIEmbeddings(
+    api_key=os.environ['HF_TOKEN'], model_name="BAAI/bge-base-en-v1.5"
+)
 def get_response(query):
     """
     Get a response from the language model.
@@ -103,8 +108,8 @@ def vector_store_chunks_retriver(_chunks):
     #     shutil.rmtree('chroma')
 
     print('\nCreating vector store')
-    vector_store = Chroma.from_documents(documents=_chunks,embedding=embedding, 
-                                        )
+    vector_store = Chroma.from_documents(documents=_chunks,embedding=embedding)
+                                        
     print('\nVector Store Created. Saving Vector Store and Returning Retriever')
     return vector_store.as_retriever(search_type="mmr",search_kwargs={"k":3})
 
