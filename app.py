@@ -1,15 +1,17 @@
 from helper import *
-
 import json
 import requests
+import argparse
 
-document = load_documents(input('Enter the url : '))
+# Add argument parsing
+parser = argparse.ArgumentParser(description='Process documents from a given URL.')
+parser.add_argument("--url", required=True, help="URL to process")
+args = parser.parse_args()
+
+# Use the URL from command-line argument
+document = load_documents(args.url)
 chunks = make_chunks(document)
 VectorStoreRetriver = vector_store_chunks_retriver(chunks)
-
-
-
-
 
 while True:
     question = input('\n"exit" or Enter your Query : ')

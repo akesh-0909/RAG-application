@@ -15,10 +15,10 @@ load_dotenv()
 Gemini_API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key={os.environ['GEMINI']}"
 # embedding = embedding_functions.SentenceTransformerEmbeddingFunction(model_name="all-MiniLM-L6-v2")
 # embedding = HuggingFaceEmbeddings(model_name=r"D:\GenAI\RAG\Rag applicaiton-from medium tutoral\sentence-transformers\all-MiniLM-L6-v2")
-# model_name="sentence-transformers\all-MiniLM-L6-v2"
+model_name="sentence-transformers/all-MiniLM-L6-v2"
 # embedding = HuggingFaceInferenceAPIEmbeddings(model_name=model_name,api_key=os.environ['HF_TOKEN'])
 embedding = HuggingFaceInferenceAPIEmbeddings(
-    api_key=os.environ['HF_TOKEN'], model_name="BAAI/bge-base-en-v1.5"
+    api_key=os.environ['HF_TOKEN'], model_name=model_name
 )
 def get_response(query):
     """

@@ -1,0 +1,4 @@
+chromadb==0.3.29
+langchain==0.1.4
+sentence-transformers==3.0.1
+flask_restful==0.3.10
