@@ -1,6 +1,7 @@
 ﻿# RAG Chat Application 
-![image](https://github.com/user-attachments/assets/21714eac-a62f-41fe-a57b-6127d0f6dee5)
+![image](https://github.com/user-attachments/assets/ee0ac9d4-fb19-4851-9dd7-e7645b216889)
 
+**What is RAG?** [Beginner Friendly Article](https://dev.to/akeshlovescience/rag-architecture-explained-beginner-5hn4)
 
 ## Overview
 ```markdown
