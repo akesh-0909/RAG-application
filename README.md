@@ -1,5 +1,5 @@
 ﻿# RAG Chat Application 
-![image](https://github.com/user-attachments/assets/32c2a42a-43fb-4e8d-9ead-35586474d055)
+![image](https://github.com/user-attachments/assets/21714eac-a62f-41fe-a57b-6127d0f6dee5)
 
 
 ## Overview
