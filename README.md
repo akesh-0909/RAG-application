@@ -1,5 +1,5 @@
 ﻿# RAG Chat Application 
-![image](https://github.com/user-attachments/assets/ee0ac9d4-fb19-4851-9dd7-e7645b216889)
+
 
 **What is RAG?** [Beginner Friendly Article](https://dev.to/akeshlovescience/rag-architecture-explained-beginner-5hn4)
 
@@ -68,7 +68,9 @@ python app.py --url <your-url>
 ```
 
 Example:
-![alt text](images/image.png)
+![image](https://github.com/user-attachments/assets/146cfbdc-cbd6-445e-a749-0c4acdce891c)
+
+
 ```bash
 python app.py --url https://example.com
 ```
@@ -114,6 +116,7 @@ You can either:
 - Upload a **PDF** to retrieve relevant content and generate responses.
 Example:
  <center> <img src="https://github.com/user-attachments/assets/c0c418b3-132f-4c85-94e2-09b66d5adaa0"> 
+
 
 ---
 
