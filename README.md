@@ -113,7 +113,8 @@ You can either:
 - Enter a **URL** for text retrieval, or
 - Upload a **PDF** to retrieve relevant content and generate responses.
 Example:
-![alt text](images/image-1.png)
+ <center> <img src="https://github.com/user-attachments/assets/c0c418b3-132f-4c85-94e2-09b66d5adaa0"> 
+
 ---
 
 ---
